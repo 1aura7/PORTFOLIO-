@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Veilles</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .veille-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      transition: border-color 0.3s;
+    }
+    .veille-card:hover { border-color: rgba(124,109,255,0.4); }
+
+    .veille-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(124,109,255,0.1);
+      border: 1px solid rgba(124,109,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .veille-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .veille-freq {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .veille-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .veille-sources-title {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .source-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .source-list li a {
+      display: inline-block;
+      font-size: 0.78rem;
+      padding: 0.3rem 0.7rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .source-list li a:hover {
+      color: var(--accent2);
+      border-color: rgba(124,109,255,0.3);
+    }
+
+    .highlight-box {
+      background: rgba(192,132,252,0.06);
+      border: 1px solid rgba(192,132,252,0.15);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-top: 0.75rem;
+    }
+    .highlight-box h4 {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent2);
+      margin-bottom: 0.5rem;
+    }
+    .highlight-box p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .methodology-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .method-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .method-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .method-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .method-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .veille-card { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <script src="nav.js"></script>
+  <main>
+    <div class="page-hero animate">
+      <span class="label">05 — Veilles technologiques</span>
+      <h1>Rester à la pointe</h1>
+      <p>La technologie évolue vite. Voici comment je me tiens informé et les sujets que je surveille de près.</p>
+    </div>
+
+    <div class="content">
+
+      <!-- Méthodologie -->
+      <span class="label">Ma méthode de veille</span>
+      <div class="methodology-grid animate delay-1">
+        <div class="method-card">
+          <div class="method-icon">📰</div>
+          <div class="method-title">Agrégateur RSS</div>
+          <div class="method-desc">Suivi automatisé de blogs tech, médias et newsletters via Feedly</div>
+        </div>
+        <div class="method-card">
+          <div class="method-icon">🐦</div>
+          <div class="method-title">Réseaux sociaux</div>
+          <div class="method-desc">Suivi de comptes spécialisés sur Twitter/X, LinkedIn et Reddit</div>
+        </div>
+        <div class="method-card">
+          <div class="method-icon">📺</div>
+          <div class="method-title">Vidéos & Podcasts</div>
+          <div class="method-desc">YouTube tech, Twitch dev-streams et podcasts spécialisés</div>
+        </div>
+        <div class="method-card">
+          <div class="method-icon">📚</div>
+          <div class="method-title">Documentation</div>
+          <div class="method-desc">Lecture directe des docs officielles et changelogs des outils utilisés</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <span class="label">Thèmes surveillés</span>
+
+      <!-- Veille 1 -->
+      <div class="veille-card animate delay-1" style="margin-top:1.5rem;">
+        <div class="veille-icon">🤖</div>
+        <div>
+          <div class="veille-title">Intelligence Artificielle & LLMs</div>
+          <div class="veille-freq">Fréquence : quotidienne</div>
+          <p class="veille-desc">
+            Suivi de l'évolution des grands modèles de langage (GPT, Claude, Gemini), des nouvelles applications de l'IA générative, et de leur impact sur le développement logiciel. Intérêt particulier pour les API d'IA et l'intégration dans les applications web.
+          </p>
+          <div class="highlight-box">
+            <h4>Ce que j'ai appris récemment</h4>
+            <p>[Ex : Expérimentation avec l'API OpenAI pour créer un assistant de code intégré dans un projet PHP. Découverte des techniques de prompt engineering et du RAG (Retrieval-Augmented Generation).]</p>
+          </div>
+          <div style="margin-top: 1rem;">
+            <div class="veille-sources-title">Sources</div>
+            <ul class="source-list">
+              <li><a href="#">Hugging Face Blog</a></li>
+              <li><a href="#">The Verge AI</a></li>
+              <li><a href="#">ArXiv (papiers)</a></li>
+              <li><a href="#">Yannic Kilcher (YouTube)</a></li>
+              <li><a href="#">Newsletter TLDR AI</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Veille 2 -->
+      <div class="veille-card animate delay-2">
+        <div class="veille-icon">🔐</div>
+        <div>
+          <div class="veille-title">Cybersécurité</div>
+          <div class="veille-freq">Fréquence : hebdomadaire</div>
+          <p class="veille-desc">
+            Suivi des vulnérabilités (CVE), des nouvelles menaces et des bonnes pratiques de sécurisation des applications web. Attention portée aux OWASP Top 10 et aux failles qui touchent les technologies que j'utilise.
+          </p>
+          <div class="highlight-box">
+            <h4>Ce que j'ai appris récemment</h4>
+            <p>[Ex : Étude des injections SQL et mise en place de requêtes préparées dans mes projets. Test de sécurité avec OWASP ZAP sur une application personnelle.]</p>
+          </div>
+          <div style="margin-top: 1rem;">
+            <div class="veille-sources-title">Sources</div>
+            <ul class="source-list">
+              <li><a href="#">ANSSI</a></li>
+              <li><a href="#">OWASP</a></li>
+              <li><a href="#">Krebs on Security</a></li>
+              <li><a href="#">CVE Details</a></li>
+              <li><a href="#">Korben.info</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Veille 3 -->
+      <div class="veille-card animate delay-3">
+        <div class="veille-icon">🌐</div>
+        <div>
+          <div class="veille-title">Développement Web & Frameworks</div>
+          <div class="veille-freq">Fréquence : hebdomadaire</div>
+          <p class="veille-desc">
+            Suivi des évolutions des frameworks JavaScript (React, Vue, Svelte), des nouvelles fonctionnalités CSS et HTML, et des tendances backend (Node.js, Bun, PHP 8.x). Lecture des changelogs et benchmarks comparatifs.
+          </p>
+          <div class="highlight-box">
+            <h4>Ce que j'ai appris récemment</h4>
+            <p>[Ex : Découverte de Bun.js et ses performances face à Node.js. Expérimentation avec les CSS Container Queries pour des composants adaptatifs.]</p>
+          </div>
+          <div style="margin-top: 1rem;">
+            <div class="veille-sources-title">Sources</div>
+            <ul class="source-list">
+              <li><a href="#">CSS-Tricks</a></li>
+              <li><a href="#">Smashing Magazine</a></li>
+              <li><a href="#">JavaScript Weekly</a></li>
+              <li><a href="#">Dev.to</a></li>
+              <li><a href="#">Fireship (YouTube)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Veille 4 -->
+      <div class="veille-card animate delay-3">
+        <div class="veille-icon">☁️</div>
+        <div>
+          <div class="veille-title">Cloud & DevOps</div>
+          <div class="veille-freq">Fréquence : mensuelle</div>
+          <p class="veille-desc">
+            Suivi des évolutions cloud (AWS, Azure, GCP), des outils de containerisation (Docker, Kubernetes) et des pratiques CI/CD. Intérêt pour l'infrastructure as code et l'automatisation des déploiements.
+          </p>
+          <div class="highlight-box">
+            <h4>Ce que j'ai appris récemment</h4>
+            <p>[Ex : Mise en place d'un pipeline CI/CD basique avec GitHub Actions pour automatiser les tests et le déploiement d'un projet personnel.]</p>
+          </div>
+          <div style="margin-top: 1rem;">
+            <div class="veille-sources-title">Sources</div>
+            <ul class="source-list">
+              <li><a href="#">AWS Blog</a></li>
+              <li><a href="#">The New Stack</a></li>
+              <li><a href="#">Docker Blog</a></li>
+              <li><a href="#">DevOps Weekly</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+        Portfolio — Laura ANDRADE PEREIRA · BTS SIO SLAM · 2025–2027
+    </footer>
+  </main>
+</body>
+</html>
