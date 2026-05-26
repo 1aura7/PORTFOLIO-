@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Présentation</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero-mega {
+      min-height: calc(100vh - 64px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero-mega::before {
+      content: '';
+      position: fixed;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(124,109,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .dot-pulse {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero-eyebrow span {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .hero-mega h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-mega h1 .name-line {
+      background: linear-gradient(135deg, #f0eeff 30%, #7c6dff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-mega h1 .role-line {
+      color: var(--accent);
+      font-size: 0.5em;
+      display: block;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      font-family: 'DM Sans', sans-serif;
+      -webkit-text-fill-color: var(--accent2);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 540px;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: #6b5cf0; transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--text); }
+
+    .stats-row {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+  
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text);
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+    @media (max-width: 600px) { .about-grid { grid-template-columns: 1fr; } }
+
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    .info-card .info-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .info-card .info-value {
+      font-size: 1rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .info-card .info-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <script src="nav.js"></script>
+  <main>
+    <div class="hero-mega animate">
+      <div class="hero-eyebrow animate delay-1">
+        <div class="dot-pulse"></div>
+        <span>Disponible — Alternance / Stage</span>
+      </div>
+      <h1 class="animate delay-1">
+        <span class="name-line">Laura ANDRADE PEREIRA</span>
+        <span class="role-line">Étudiant en BTS SIO — Option SLAM</span>
+      </h1>
+      <p class="hero-desc animate delay-2">
+        Passionné par le développement et les nouvelles technologies, je construis des solutions numériques robustes et innovantes. Ce portfolio retrace mon parcours, mes projets, et mes compétences acquises.
+      </p>
+      <div class="hero-ctas animate delay-3">
+        <a href="projets.html" class="btn-primary">Voir mes projets →</a>
+        <a href="parcours.html" class="btn-outline">Mon parcours</a>
+      </div>
+      <div class="stats-row animate delay-3">
+        <div class="stat-item">
+          <span class="stat-num">1</span>
+          <span class="stat-label">Années de formation</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">Projets réalisés</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">0</span>
+          <span class="stat-label">Mois en entreprise</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Curiosité</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="info-card animate delay-1">
+        <div class="info-label">Formation</div>
+        <div class="info-value">BTS SIO — SLAM</div>
+        <div class="info-sub">Lycée Parc de Vilgénis</div>
+      </div>
+      <div class="info-card animate delay-1">
+        <div class="info-label">91305, MASSY</div>
+        <div class="info-value">Île-de-France</div>
+        <div class="info-sub">Région parisienne</div>
+      </div>
+      <div class="info-card animate delay-2">
+        <div class="info-label">Contact</div>
+        <div class="info-value">laura.iandradep@gmail.com</div>
+        <div class="info-sub">LinkedIn · GitHub</div>
+      </div>
+      <div class="info-card animate delay-2">
+        <div class="info-label">Centres d'intérêt</div>
+        <div class="info-value">Dev web, IA, Cybersécurité</div>
+        <div class="info-sub">Veille technologique active</div>
+      </div>
+    </div>
+
+    <footer>
+      Portfolio — Laura ANDRADE PEREIRA · BTS SIO SLAM · 2025–2027
+    </footer>
+  </main>
+</body>
+</html>

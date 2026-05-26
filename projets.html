@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Projets</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--muted);
+      padding: 0.75rem 1.25rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .project-card-full {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s;
+    }
+    .project-card-full:hover { border-color: rgba(124,109,255,0.4); }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .project-badge {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      background: rgba(124,109,255,0.1);
+      color: var(--accent2);
+      border: 1px solid rgba(124,109,255,0.2);
+      white-space: nowrap;
+    }
+
+    .project-title-big {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .project-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .project-desc-full {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-deliverables {
+      background: var(--surface2);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .project-deliverables h4 {
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .project-deliverables ul {
+      list-style: none;
+      padding: 0;
+    }
+    .project-deliverables li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 0.2rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .project-deliverables li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+    }
+
+    .tags-row { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  </style>
+</head>
+<body>
+  <script src="nav.js"></script>
+  <main>
+    <div class="page-hero animate">
+      <span class="label">03 — Projets réalisés</span>
+      <h1>Ce que j'ai construit</h1>
+      <p>Projets académiques, travaux pratiques et réalisations personnelles au fil de ma formation BTS SIO.</p>
+    </div>
+
+    <div class="content">
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('an1', this)">1ère année</button>
+        <button class="tab-btn" onclick="switchTab('an2', this)">2ème année</button>
+      </div>
+
+      <!-- PREMIÈRE ANNÉE -->
+      <div class="tab-panel active" id="an1">
+
+        <div class="project-card-full animate delay-1">
+          <div class="project-header">
+            <div>
+              <div class="project-title-big">Projet 1 — [Nom du projet]</div>
+              <div class="project-meta">[Semestre] · [Contexte : individuel / en binôme / en groupe]</div>
+            </div>
+            <span class="project-badge">1ère année</span>
+          </div>
+          <p class="project-desc-full">
+            [Décris ici le projet : quel était l'objectif ? Quel problème résolvait-il ? Quelle a été ta contribution ? Ex : Application web de gestion de bibliothèque permettant aux utilisateurs d'emprunter, de réserver et de consulter un catalogue de livres.]
+          </p>
+          <div class="project-deliverables">
+            <h4>Livrables & réalisations</h4>
+            <ul>
+              <li>[Ex : Modélisation de la base de données (MCD, MLD)]</li>
+              <li>[Ex : Développement du back-end en PHP]</li>
+              <li>[Ex : Interface utilisateur HTML/CSS responsive]</li>
+              <li>[Ex : Documentation technique et guide utilisateur]</li>
+            </ul>
+          </div>
+          <div class="tags-row">
+            <span class="tag">[Techno 1]</span>
+            <span class="tag">[Techno 2]</span>
+            <span class="tag">[Techno 3]</span>
+          </div>
+        </div>
+
+        <div class="project-card-full animate delay-2">
+          <div class="project-header">
+            <div>
+              <div class="project-title-big">Projet 2 — [Nom du projet]</div>
+              <div class="project-meta">[Semestre] · [Contexte]</div>
+            </div>
+            <span class="project-badge">1ère année</span>
+          </div>
+          <p class="project-desc-full">
+            [Description du projet 2 : objectif, contexte, rôle joué, difficultés rencontrées et solutions apportées.]
+          </p>
+          <div class="project-deliverables">
+            <h4>Livrables & réalisations</h4>
+            <ul>
+              <li>[Livrable 1]</li>
+              <li>[Livrable 2]</li>
+              <li>[Livrable 3]</li>
+            </ul>
+          </div>
+          <div class="tags-row">
+            <span class="tag">[Techno]</span>
+            <span class="tag">[Techno]</span>
+          </div>
+        </div>
+
+        <div class="project-card-full animate delay-3">
+          <div class="project-header">
+            <div>
+              <div class="project-title-big">Projet 3 — [Nom du projet]</div>
+              <div class="project-meta">[Semestre] · [Contexte]</div>
+            </div>
+            <span class="project-badge">1ère année</span>
+          </div>
+          <p class="project-desc-full">
+            [Description du projet 3.]
+          </p>
+          <div class="project-deliverables">
+            <h4>Livrables & réalisations</h4>
+            <ul>
+              <li>[Livrable 1]</li>
+              <li>[Livrable 2]</li>
+            </ul>
+          </div>
+          <div class="tags-row">
+            <span class="tag">[Techno]</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DEUXIÈME ANNÉE -->
+      <div class="tab-panel" id="an2">
+
+        <div class="project-card-full animate delay-1">
+          <div class="project-header">
+            <div>
+              <div class="project-title-big">Projet 4 — [Nom du projet]</div>
+              <div class="project-meta">[Semestre] · [Contexte]</div>
+            </div>
+            <span class="project-badge">2ème année</span>
+          </div>
+          <p class="project-desc-full">
+            [Description : ex : Application mobile de suivi de présence développée en équipe de 3, utilisant une API REST et une base de données MySQL déployée sur serveur.]
+          </p>
+          <div class="project-deliverables">
+            <h4>Livrables & réalisations</h4>
+            <ul>
+              <li>[Ex : Architecture MVC mise en place]</li>
+              <li>[Ex : API REST documentée avec Swagger]</li>
+              <li>[Ex : Tests unitaires]</li>
+              <li>[Ex : Déploiement sur serveur Linux]</li>
+            </ul>
+          </div>
+          <div class="tags-row">
+            <span class="tag">[Techno]</span>
+            <span class="tag">[Techno]</span>
+            <span class="tag">[Techno]</span>
+          </div>
+        </div>
+
+        <div class="project-card-full animate delay-2">
+          <div class="project-header">
+            <div>
+              <div class="project-title-big">Projet 5 — [Nom du projet]</div>
+              <div class="project-meta">[Semestre] · [Contexte]</div>
+            </div>
+            <span class="project-badge">2ème année</span>
+          </div>
+          <p class="project-desc-full">
+            [Description du projet 5.]
+          </p>
+          <div class="project-deliverables">
+            <h4>Livrables & réalisations</h4>
+            <ul>
+              <li>[Livrable 1]</li>
+              <li>[Livrable 2]</li>
+            </ul>
+          </div>
+          <div class="tags-row">
+            <span class="tag">[Techno]</span>
+          </div>
+        </div>
+
+        <div class="project-card-full animate delay-3">
+          <div class="project-header">
+            <div>
+              <div class="project-title-big">Projet transversal — [Nom]</div>
+              <div class="project-meta">Projet de fin de formation · [Contexte]</div>
+            </div>
+            <span class="project-badge">2ème année</span>
+          </div>
+          <p class="project-desc-full">
+            [Description du projet de synthèse ou projet E6.]
+          </p>
+          <div class="project-deliverables">
+            <h4>Livrables & réalisations</h4>
+            <ul>
+              <li>[Livrable 1]</li>
+              <li>[Livrable 2]</li>
+              <li>[Livrable 3]</li>
+            </ul>
+          </div>
+          <div class="tags-row">
+            <span class="tag">[Techno]</span>
+            <span class="tag">[Techno]</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      Portfolio — Prénom Nom · BTS SIO SLAM · 2024–2026
+    </footer>
+  </main>
+
+  <script>
+    function switchTab(id, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
